@@ -24,8 +24,13 @@ a {
 }
 
 h2,
-h3 {
+h3,
+h4 {
   margin-top: 0;
+}
+
+h4 {
+  margin-bottom: .4em;
 }
 
 a {
@@ -35,47 +40,78 @@ a {
 img {
   max-width: 100%;
 }
-.center {
-  text-align: center;
+
+figure {
+  margin: 0;
+  line-height: 0;
+  position: relative;
 }
+
+figcaption {
+  font-size: .9em;
+  line-height: 1.5;
+  color: #fff;
+  padding: 1em;
+  background: rgba(19,43,102, .75);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 /* =================================
   Base Layout Styles
 ==================================== */
 
 /* ---- Navigation ---- */
+
 .name {
   font-size: 1.25em;
   margin: 0;
 }
+
 .main-nav {
   margin-top: 5px;
 }
-.name a,
-.main-nav a {
-  text-align: center;
-  display: block;
-  padding: 10px 15px;
-}
 
-.main-nav a {
-  font-size: .95em;
-  color: #3acec2;
-  text-transform: uppercase;
-}
-.main-nav a:hover {
-  color: #093a58;
-}
+  .name a,
+  .main-nav a {
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+  }
+
+  .main-nav a {
+    font-size: .95em;
+    color: #3acec2;
+    text-transform: uppercase;
+  }
+
+  .main-nav a:hover {
+    color: #093a58;
+  }
 
 /* ---- Layout Containers ---- */
+
 .main-header {
   padding-top: .5em;
   padding-bottom: .5em;
 }
+
+.banner,
+.main-footer {
+  text-align: center;
+}
+
 .banner {
   color: #fff;
   background: #3acec2;
-  padding: 10% 0;
-  margin-bottom: 5%;
+  padding: 3.2em 0;
+  margin-bottom: 60px;
+}
+
+.col {
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 .main-footer {
@@ -83,7 +119,6 @@ img {
   padding: 2em 0;
   margin-top: 30px;
   text-align: center;
-  font-size: 14px;
 }
 
 /* ---- Page Elements ---- */
@@ -91,13 +126,15 @@ img {
 .logo {
   width: 190px;
 }
+
 .headline {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
-.col {
-  display: block;
-  padding-left: 1em;
-  padding-right: 1em;
+.icon-location {
+  width: 35px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
 }
 
 /* =================================
@@ -105,42 +142,46 @@ img {
 ==================================== */
 
 @media (min-width: 769px) {
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-.secondary,
-.primary {
-  width: 50%;
-}
-.col {
- padding: 1em;
- float: left;
- display: block;
-}
-/* ---- Page Elements ---- */
-.banner{
-  padding: 3.5% 0;
-}
-.headline {
-  margin-bottom: 0;
-}
-.main-footer {
-  text-align: left;
-}
-/* ---- Nav ---- */
-
-.main-nav {
-    float: right;
+  body {
+    padding-top: 68px;
+  }
+  .main-header{
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,.4);
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  .container {
+    width: 90%;
+    margin: 0 auto;
   }
 
   .name,
-  .main-nav li {
+  .col {
     float: left;
   }
 
+  .primary,
+  .secondary {
+    width: 50%;
+  }
+
+  .main-nav {
+    float: right;
+  }
+
   .main-nav li {
-    margin-left: 12px;
+    display: inline-block;
+    margin-left: 15px;
+  }
+
+  .tagline {
+    font-size: 1.4em;
+  }
+  .main-footer {
+    text-align: left;
   }
   /* ---- Float clearfix ---- */
 
@@ -153,19 +194,19 @@ img {
 }
 
 @media (min-width: 1025px) {
+
   .container {
     width: 80%;
     max-width: 1150px;
-    margin: 0 auto;
   }
+
   .primary {
     width: 40%;
   }
+
   .secondary,
   .tertiary {
     width: 30%;
-   }
-   .lrg {
-    display: flex;
-   }
+  }
+
 }
